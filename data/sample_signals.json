@@ -1,0 +1,47 @@
+[
+  {
+    "component_id": "RDBMS_PRIMARY",
+    "component_type": "RDBMS",
+    "message": "Connection pool exhausted",
+    "latency_ms": 2850,
+    "error_code": "DB_POOL_TIMEOUT",
+    "payload": {
+      "host": "db-primary-1",
+      "region": "us-east",
+      "connections": 500
+    }
+  },
+  {
+    "component_id": "RDBMS_PRIMARY",
+    "component_type": "RDBMS",
+    "message": "Write latency above SLO",
+    "latency_ms": 4200,
+    "error_code": "DB_WRITE_LATENCY",
+    "payload": {
+      "host": "db-primary-1",
+      "p99_ms": 4200
+    }
+  },
+  {
+    "component_id": "MCP_HOST_02",
+    "component_type": "MCP_HOST",
+    "message": "Tool host heartbeat missed",
+    "latency_ms": 900,
+    "error_code": "MCP_HEARTBEAT_MISSED",
+    "payload": {
+      "host": "mcp-host-02",
+      "missed_heartbeats": 5
+    }
+  },
+  {
+    "component_id": "CACHE_CLUSTER_01",
+    "component_type": "CACHE",
+    "message": "Eviction rate spike",
+    "latency_ms": 120,
+    "error_code": "CACHE_EVICTION_SPIKE",
+    "payload": {
+      "cluster": "cache-cluster-01",
+      "evictions_per_sec": 4000
+    }
+  }
+]

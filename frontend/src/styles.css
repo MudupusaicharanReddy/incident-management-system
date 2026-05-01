@@ -1,0 +1,341 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2933;
+  background: #f4f7f9;
+  font-synthesis: none;
+  letter-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 390px 1fr;
+}
+
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #d8e0e7;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brandMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  background: #0f766e;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.brand p,
+.incidentHeader p {
+  margin: 4px 0 0;
+  color: #667585;
+  font-size: 13px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.metric {
+  min-height: 92px;
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.metric svg {
+  color: #0f766e;
+}
+
+.metric span {
+  color: #667585;
+  font-size: 12px;
+}
+
+.metric strong {
+  font-size: 22px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  gap: 8px;
+}
+
+.actions button,
+.workflow button,
+.rcaForm button {
+  min-height: 42px;
+  border-radius: 8px;
+  background: #0f766e;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  white-space: nowrap;
+}
+
+.actions .secondary,
+.workflow button {
+  color: #1f2933;
+  background: #e8eef2;
+}
+
+.error {
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.feed h2,
+.panel h3 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.empty {
+  color: #667585;
+}
+
+.incidentRow {
+  width: 100%;
+  min-height: 66px;
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1f2933;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.incidentRow.selected {
+  border-color: #0f766e;
+  background: #eefbf8;
+}
+
+.incidentRow small {
+  display: block;
+  color: #667585;
+  margin-top: 4px;
+}
+
+.sev {
+  width: 38px;
+  height: 30px;
+  border-radius: 6px;
+  display: inline-grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.P0 {
+  background: #b91c1c;
+}
+
+.P1 {
+  background: #b45309;
+}
+
+.P2 {
+  background: #2563eb;
+}
+
+.P3 {
+  background: #475569;
+}
+
+.detailPane {
+  padding: 28px;
+  overflow: auto;
+}
+
+.blank {
+  min-height: calc(100vh - 56px);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: #667585;
+}
+
+.blank h2 {
+  color: #1f2933;
+  margin-bottom: 0;
+}
+
+.incidentHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.incidentHeader h2 {
+  margin: 10px 0 0;
+  font-size: 28px;
+}
+
+.statusPill {
+  border-radius: 8px;
+  background: #111827;
+  color: #ffffff;
+  padding: 10px 12px;
+  font-weight: 800;
+}
+
+.workflow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 18px;
+}
+
+.panel {
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 18px;
+}
+
+.signalList {
+  display: grid;
+  gap: 8px;
+  max-height: 62vh;
+  overflow: auto;
+}
+
+.signal {
+  border: 1px solid #d8e0e7;
+  border-radius: 8px;
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.signal small,
+.mttr {
+  color: #667585;
+}
+
+.rcaForm {
+  display: grid;
+  gap: 12px;
+}
+
+.rcaForm label {
+  display: grid;
+  gap: 6px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.rcaForm input,
+.rcaForm select,
+.rcaForm textarea {
+  width: 100%;
+  border: 1px solid #cbd5df;
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: #1f2933;
+  background: #ffffff;
+}
+
+.rcaForm textarea {
+  resize: vertical;
+}
+
+@media (max-width: 920px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid #d8e0e7;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .sidebar,
+  .detailPane {
+    padding: 16px;
+  }
+
+  .metrics,
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .incidentHeader {
+    display: grid;
+  }
+}
