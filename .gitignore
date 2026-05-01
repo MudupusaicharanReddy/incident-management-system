@@ -1,0 +1,12 @@
+.python-packages/
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+node_modules/
+dist/
+.vite/
+
+.env
+.DS_Store
