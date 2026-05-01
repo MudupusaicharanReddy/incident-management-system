@@ -22,6 +22,8 @@ from reportlab.platypus import (
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "submission"
 OUT_FILE = OUT_DIR / "Incident_Management_System_Project_Submission.pdf"
+FINAL_OUT_FILE = OUT_DIR / "MudupusaicharanReddy - Infrastructure SRE Intern Assignment.pdf"
+GITHUB_URL = "https://github.com/MudupusaicharanReddy/incident-management-system"
 
 INCLUDED_SUFFIXES = {".py", ".jsx", ".css", ".html", ".json", ".txt", ".yml", ".md", ".dockerfile"}
 EXCLUDED_PARTS = {
@@ -110,6 +112,7 @@ def build_pdf() -> None:
     story.append(Paragraph("Incident Management System", styles["Title"]))
     story.append(Paragraph("Engineering Assignment Project Submission", styles["Heading2"]))
     story.append(Paragraph(f"Generated on {datetime.now().strftime('%d %b %Y, %I:%M %p')}", styles["Body"]))
+    story.append(Paragraph(f"GitHub Repository: {GITHUB_URL}", styles["Body"]))
     story.append(Spacer(1, 0.22 * inch))
 
     summary = (
@@ -209,8 +212,10 @@ React Dashboard -> Incident APIs for status updates and RCA submission
         story.append(Preformatted("\n".join(wrapped_lines) or "[empty file]", styles["CodeBlock"]))
 
     doc.build(story)
+    if OUT_FILE != FINAL_OUT_FILE:
+        FINAL_OUT_FILE.write_bytes(OUT_FILE.read_bytes())
 
 
 if __name__ == "__main__":
     build_pdf()
-    print(OUT_FILE)
+    print(FINAL_OUT_FILE)
